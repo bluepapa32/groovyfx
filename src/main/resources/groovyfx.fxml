@@ -420,7 +420,7 @@
     <StackPane fx:id="webViewPane" mouseTransparent="false" onMouseClicked="#onDateClicked" pickOnBounds="true" prefHeight="-1.0" prefWidth="-1.0" snapToPixel="false" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
         <Region fx:id="webViewBackGround" prefHeight="-1.0" prefWidth="-1.0" />
-        <WebView fx:id="webView" maxHeight="200.0" maxWidth="400.0" mouseTransparent="false" onMouseClicked="#onWebViewClicked" pickOnBounds="true" prefHeight="200.0" prefWidth="400.0" visible="true" />
+        <WebView fx:id="webView" maxHeight="240.0" maxWidth="480.0" mouseTransparent="false" onMouseClicked="#onWebViewClicked" pickOnBounds="true" prefHeight="240.0" prefWidth="480.0" visible="true" />
       </children>
     </StackPane>
   </children>
