@@ -42,9 +42,13 @@ class Controller implements Initializable {
 <p>${item.pubDate}</p>
 </body>
 </html>""")
+        webViewPane.visible = true
     }
 
-    def onDateClicked(Event e) { webViewPane.visible = false }
+    def onDateClicked(Event e) {
+        webView.engine.loadContent("")
+        webViewPane.visible = false
+    }
 
     def onWebViewClicked(Event e) { e.consume() }
 
@@ -70,7 +74,6 @@ class Controller implements Initializable {
                     }
                 }
 
-                webViewPane.visible = true
             }
         } as ChangeListener)
 

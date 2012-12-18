@@ -40,3 +40,8 @@
     -fx-text-fill: blue;
     -fx-underline: true;
 }
+
+#webViewBackGround {
+    -fx-background-color: black;
+    -fx-opacity: 0.75;
+}
