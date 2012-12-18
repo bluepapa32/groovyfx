@@ -37,7 +37,7 @@ class Controller implements Initializable {
         def item = items.find { it.author == name }
         webView.engine.loadContent("""<html>
 <body>
-<img src="${user.icon}" /> ${name}<br>
+<img src="${user.icon}" width="40" height="40" /> ${name}<br>
 <p>${item.description}</p>
 <p>${item.pubDate}</p>
 </body>
