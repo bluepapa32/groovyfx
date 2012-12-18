@@ -53,17 +53,21 @@ class Controller implements Initializable {
     def onWebViewClicked(Event e) { e.consume() }
 
     void initialize(URL url, ResourceBundle bundle) {
+        initCalendar()
+        initWebView()
+    }
 
-        //
+    def initCalendar() {
         calendar.children.each { node ->
             node.prefWidthProperty().bind(calendar.widthProperty().divide(7))
         }
+        updateCalendar()
+    }
 
-        //
+    def initWebView() {
         webView.contextMenuEnabled = false
         webView.engine.loadWorker.stateProperty().addListener({ ov, oldState, newState ->
             if (newState == State.SUCCEEDED) {
-
                 def root = webView.engine.document.documentElement
                 use(DOMCategory) {
                     root.'**'.'A'.each { e ->
@@ -74,12 +78,12 @@ class Controller implements Initializable {
                         e.addEventListener("click", event, false)
                     }
                 }
-
             }
         } as ChangeListener)
+    }
 
-        //
-        Service service = [
+    def updateCalendar() {
+        def service = [
             createTask: { -> [
                 call: { ->
                     def xml = new XmlSlurper().parse('http://api.atnd.org/events/users/?event_id=34317')
