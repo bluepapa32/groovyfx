@@ -1,0 +1,42 @@
+.calendar {
+    -fx-border-color: gray;
+    -fx-border-width: 1 0 0 1;
+}
+
+.calendar-header-weekday,
+.calendar-header-sunday,
+.calendar-header-saturday {
+    -fx-background-color: lightgray;
+    -fx-border-color: gray;
+    -fx-border-width: 0 1 1 0;
+}
+
+.calendar-weekday,
+.calendar-sunday,
+.calendar-saturday {
+    -fx-border-color: gray;
+    -fx-border-width: 0 1 1 0;
+    -fx-alignment: top-left;
+    -fx-padding: 4;
+}
+
+.calendar-header-sunday .day_of_week {
+    -fx-fill: red;
+}
+
+.calendar-sunday .day_of_month {
+    -fx-fill: red;
+}
+
+.calendar-header-saturday .day_of_week {
+    -fx-fill: blue;
+}
+
+.calendar-saturday .day_of_month {
+    -fx-fill: blue;
+}
+
+.user .name {
+    -fx-text-fill: blue;
+    -fx-underline: true;
+}

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" fx:id="root" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="" xmlns:fx="http://javafx.com/fxml" fx:controller="groovyfx.Controller">
+  <children>
+    <GridPane fx:id="calendar" alignment="TOP_LEFT" gridLinesVisible="false" hgap="0.0" prefWidth="-1.0" styleClass="calendar" vgap="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-header-sunday" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_week" text="Sun" />
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-header-weekday" GridPane.columnIndex="1" GridPane.rowIndex="0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_week" text="Mon" />
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-header-weekday" GridPane.columnIndex="2" GridPane.rowIndex="0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_week" text="Tue" />
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-header-weekday" GridPane.columnIndex="3" GridPane.rowIndex="0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_week" text="Wed" />
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-header-weekday" GridPane.columnIndex="4" GridPane.rowIndex="0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_week" text="Thu" />
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-header-weekday" GridPane.columnIndex="5" GridPane.rowIndex="0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_week" text="Fri" />
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-header-saturday" GridPane.columnIndex="6" GridPane.rowIndex="0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_week" text="Sat" />
+          </children>
+        </StackPane>
+        <StackPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-sunday" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-saturday" GridPane.columnIndex="6" GridPane.rowIndex="1">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="1" />
+            <HBox fx:id="user1" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon1" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name1" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-sunday" GridPane.columnIndex="0" GridPane.rowIndex="2">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="2" />
+            <HBox fx:id="user2" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon2" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name2" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="3" />
+            <HBox fx:id="user3" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon3" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name3" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="2" GridPane.rowIndex="2">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="4" />
+            <HBox fx:id="user4" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon4" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name4" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="3" GridPane.rowIndex="2">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="5" />
+            <HBox fx:id="user5" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon5" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name5" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="4" GridPane.rowIndex="2">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="6" />
+            <HBox fx:id="user6" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon6" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name6" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="5" GridPane.rowIndex="2">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="7" />
+            <HBox fx:id="user7" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon7" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name7" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-saturday" GridPane.columnIndex="6" GridPane.rowIndex="2">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="8" />
+            <HBox fx:id="user8" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon8" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name8" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-sunday" GridPane.columnIndex="0" GridPane.rowIndex="3">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="9" />
+            <HBox fx:id="user9" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon9" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name9" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="1" GridPane.rowIndex="3">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="10" />
+            <HBox fx:id="user10" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon10" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name10" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="2" GridPane.rowIndex="3">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="11" />
+            <HBox fx:id="user11" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon11" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name11" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="3" GridPane.rowIndex="3">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="12" />
+            <HBox fx:id="user12" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon12" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name12" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="4" GridPane.rowIndex="3">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="13" />
+            <HBox fx:id="user13" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon13" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name13" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="5" GridPane.rowIndex="3">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="14" />
+            <HBox fx:id="user14" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon14" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name14" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-saturday" GridPane.columnIndex="6" GridPane.rowIndex="3">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="15" />
+            <HBox fx:id="user15" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon15" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name15" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-sunday" GridPane.columnIndex="0" GridPane.rowIndex="4">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="16" />
+            <HBox fx:id="user16" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon16" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name16" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="1" GridPane.rowIndex="4">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="17" />
+            <HBox fx:id="user17" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon17" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name17" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="2" GridPane.rowIndex="4">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="18" />
+            <HBox fx:id="user18" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon18" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name18" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="3" GridPane.rowIndex="4">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="19" />
+            <HBox fx:id="user19" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon19" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name19" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="4" GridPane.rowIndex="4">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="20" />
+            <HBox fx:id="user20" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon20" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name20" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="5" GridPane.rowIndex="4">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="21" />
+            <HBox fx:id="user21" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon21" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name21" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-saturday" GridPane.columnIndex="6" GridPane.rowIndex="4">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="22" />
+            <HBox fx:id="user22" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon22" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name22" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-sunday" GridPane.columnIndex="0" GridPane.rowIndex="5">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="23" />
+            <HBox fx:id="user23" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon23" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name23" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="1" GridPane.rowIndex="5">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="24" />
+            <HBox fx:id="user24" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon24" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name24" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="2" GridPane.rowIndex="5">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="25" />
+            <HBox fx:id="user25" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon25" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name25" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="3" GridPane.rowIndex="5">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="26" />
+            <HBox fx:id="user26" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon26" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name26" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="4" GridPane.rowIndex="5">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="27" />
+            <HBox fx:id="user27" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon27" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name27" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="5" GridPane.rowIndex="5">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="28" />
+            <HBox fx:id="user28" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon28" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name28" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-saturday" GridPane.columnIndex="6" GridPane.rowIndex="5">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="29" />
+            <HBox fx:id="user29" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon29" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name29" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-sunday" GridPane.columnIndex="0" GridPane.rowIndex="6">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="30" />
+            <HBox fx:id="user30" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon30" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name30" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane prefHeight="-1.0" prefWidth="-1.0" styleClass="calendar-weekday" GridPane.columnIndex="1" GridPane.rowIndex="6">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="day_of_month" text="31" />
+            <HBox fx:id="user31" alignment="BOTTOM_LEFT" prefHeight="-1.0" prefWidth="-1.0" styleClass="user">
+              <children>
+                <ImageView fx:id="icon31" fitHeight="30.0" fitWidth="30.0" image="$null" preserveRatio="true" styleClass="icon" />
+                <Hyperlink fx:id="name31" focusTraversable="false" onAction="#onNameClicked" styleClass="name" text="" />
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints fillWidth="true" halignment="LEFT" hgrow="ALWAYS" minWidth="-1.0" prefWidth="-1.0" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="-1.0" prefWidth="-1.0" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="-1.0" prefWidth="-1.0" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="-1.0" prefWidth="-1.0" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="-1.0" prefWidth="-1.0" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="-1.0" prefWidth="-1.0" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="-1.0" prefWidth="-1.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="-1.0" prefHeight="-1.0" valignment="TOP" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="-1.0" prefHeight="-1.0" valignment="TOP" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="-1.0" prefHeight="-1.0" valignment="TOP" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="-1.0" prefHeight="-1.0" valignment="TOP" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="-1.0" prefHeight="-1.0" valignment="TOP" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="-1.0" prefHeight="-1.0" valignment="TOP" vgrow="ALWAYS" />
+      </rowConstraints>
+    </GridPane>
+    <StackPane fx:id="webViewPane" mouseTransparent="false" onMouseClicked="#onDateClicked" pickOnBounds="true" prefHeight="-1.0" prefWidth="-1.0" snapToPixel="false" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <WebView fx:id="webView" maxHeight="200.0" maxWidth="400.0" mouseTransparent="false" onMouseClicked="#onWebViewClicked" pickOnBounds="true" prefHeight="200.0" prefWidth="400.0" visible="true" />
+      </children>
+    </StackPane>
+  </children>
+  <stylesheets>
+    <URL value="@groovyfx.css" />
+  </stylesheets>
+</AnchorPane>
