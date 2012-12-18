@@ -60,6 +60,7 @@ class Controller implements Initializable {
         }
 
         //
+        webView.contextMenuEnabled = false
         webView.engine.loadWorker.stateProperty().addListener({ ov, oldState, newState ->
             if (newState == State.SUCCEEDED) {
 
