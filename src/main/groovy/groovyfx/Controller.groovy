@@ -1,12 +1,19 @@
 package groovyfx
 
+import javafx.application.Application
+import javafx.beans.value.ChangeListener
 import javafx.concurrent.*
+import javafx.concurrent.Worker.State
 import javafx.event.*
 import javafx.fxml.*
 import javafx.scene.control.*
 import javafx.scene.image.*
 import javafx.scene.layout.*
 import javafx.scene.web.*
+
+import groovy.xml.dom.DOMCategory
+
+import org.w3c.dom.events.EventListener
 
 class Controller implements Initializable {
 
@@ -18,6 +25,8 @@ class Controller implements Initializable {
 
     @FXML
     WebView webView
+
+    Application application
 
     def users
     def items
@@ -33,7 +42,6 @@ class Controller implements Initializable {
 <p>${item.pubDate}</p>
 </body>
 </html>""")
-        webViewPane.visible = true
     }
 
     def onDateClicked(Event e) { webViewPane.visible = false }
@@ -46,6 +54,25 @@ class Controller implements Initializable {
         calendar.children.each { node ->
             node.prefWidthProperty().bind(calendar.widthProperty().divide(7))
         }
+
+        //
+        webView.engine.loadWorker.stateProperty().addListener({ ov, oldState, newState ->
+            if (newState == State.SUCCEEDED) {
+
+                def root = webView.engine.document.documentElement
+                use(DOMCategory) {
+                    root.'**'.'A'.each { e ->
+                        def event = { ev -> 
+                            application.hostServices.showDocument(e.href)
+                            ev.preventDefault()
+                        } as EventListener
+                        e.addEventListener("click", event, false)
+                    }
+                }
+
+                webViewPane.visible = true
+            }
+        } as ChangeListener)
 
         //
         Service service = [
