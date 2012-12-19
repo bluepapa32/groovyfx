@@ -6,3 +6,4 @@ build/
 debug.keystore
 *.swp
 *.bak
+.DS_Store
