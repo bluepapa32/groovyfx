@@ -51,15 +51,15 @@ class Controller implements Initializable {
         webViewPane.visible = true
     }
 
-    def onDateClicked(Event e) {
+    def onWebViewClicked(Event e) { e.consume() }
+
+    def onWebViewBackGroundClicked(Event e) {
         webView.engine.loadContent("")
         webViewPane.visible = false
     }
 
-    def onWebViewClicked(Event e) { e.consume() }
-
     def onWebViewCloseButtonClicked(Event e) {
-        onDateClicked(e)
+        onWebViewBackGroundClicked(e)
     }
 
     void initialize(URL url, ResourceBundle bundle) {
