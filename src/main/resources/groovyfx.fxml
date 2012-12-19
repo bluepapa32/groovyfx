@@ -420,7 +420,19 @@
     <StackPane fx:id="webViewPane" mouseTransparent="false" onMouseClicked="#onDateClicked" pickOnBounds="true" prefHeight="-1.0" prefWidth="-1.0" snapToPixel="false" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
         <Region fx:id="webViewBackGround" prefHeight="-1.0" prefWidth="-1.0" />
-        <WebView fx:id="webView" maxHeight="240.0" maxWidth="480.0" mouseTransparent="false" onMouseClicked="#onWebViewClicked" pickOnBounds="true" prefHeight="240.0" prefWidth="480.0" visible="true" />
+        <StackPane maxHeight="240.0" maxWidth="480.0" prefHeight="240.0" prefWidth="480.0">
+          <children>
+            <WebView fx:id="webView" maxHeight="240.0" maxWidth="480.0" mouseTransparent="false" onMouseClicked="#onWebViewClicked" pickOnBounds="true" prefHeight="240.0" prefWidth="480.0" visible="true" />
+            <ImageView fx:id="webViewCloseButton" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onWebViewCloseButtonClicked" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+              <image>
+                <Image url="@close.png" />
+              </image>
+              <StackPane.margin>
+                <Insets right="-12.0" top="-12.0" />
+              </StackPane.margin>
+            </ImageView>
+          </children>
+        </StackPane>
       </children>
     </StackPane>
   </children>

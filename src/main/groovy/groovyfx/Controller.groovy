@@ -52,6 +52,10 @@ class Controller implements Initializable {
 
     def onWebViewClicked(Event e) { e.consume() }
 
+    def onWebViewCloseButtonClicked(Event e) {
+        onDateClicked(e)
+    }
+
     void initialize(URL url, ResourceBundle bundle) {
         initCalendar()
         initWebView()
