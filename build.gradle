@@ -2,6 +2,8 @@ apply plugin: 'groovy'
 apply plugin: 'eclipse'
 apply from: 'http://repository-javafx-gradle-plugin.forge.cloudbees.com/snapshot/javafx.plugin'
 
+defaultTasks 'run'
+
 repositories {
     mavenCentral()
 }
