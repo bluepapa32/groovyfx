@@ -35,13 +35,19 @@ class Controller implements Initializable {
         def name = e.source.text
         def user = users.find { it.name == name }
         def item = items.find { it.author == name }
-        webView.engine.loadContent("""<html>
-<body>
-<img src="${user.icon}" width="40" height="40" /> ${name}<br>
-<p>${item.description}</p>
-<p>${item.pubDate}</p>
-</body>
-</html>""")
+        new StringWriter().withWriter { w ->
+            new groovy.xml.MarkupBuilder(w).html {
+                head {}
+                body {
+                    img src: user.icon, width: 40, height: 40
+                    span name
+                    br()
+                    p { mkp.yieldUnescaped item.description }
+                    p item.pubDate
+                }
+            }
+            webView.engine.loadContent("${w}")
+        }
         webViewPane.visible = true
     }
 
@@ -100,7 +106,7 @@ class Controller implements Initializable {
                     def rss = new XmlSlurper().parse('http://atnd.org/comments/34317.rss')
                     items = rss.channel.item.collect { item -> [
                         author:      item.author.text(),
-                        description: item.description.text().replaceAll('(?<!")(https?://[^ "<>]+)(?!")', '<a href="$1">$1</a>'),
+                        description: item.description.text().replaceAll('(?<!")(https?://[^ "<>]+)(?!")', '<p><a href="$1">$1</a></p>'),
                         pubDate:     item.pubDate.text()
                     ]}
 
