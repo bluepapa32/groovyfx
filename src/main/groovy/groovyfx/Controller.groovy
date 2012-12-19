@@ -109,13 +109,17 @@ class Controller implements Initializable {
             calendar.lookupAll('.name')
                     .findAll { it instanceof Hyperlink }
                     .eachWithIndex { node, index ->
-                node.text = users[index]?.name
+                def name = users[index]?.name
+                node.text = name
+                node.disable = !items.find { it.author == name }
             }
 
             calendar.lookupAll('.icon')
                     .eachWithIndex { node, index ->
+                def name = users[index]?.name
                 def icon = users[index]?.icon
                 node.image = icon ? new Image(icon, 30.0, 30.0, true, true, true) : null
+                node.disable = !items.find { it.author == name }
             }
 
         } as EventHandler
